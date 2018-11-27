@@ -51,6 +51,8 @@ GEM
       activemodel (= 5.1.6)
       activesupport (= 5.1.6)
       arel (~> 8.0)
+    activerecord-honeycomb (0.3.0)
+      libhoney
     activerecord-import (0.27.0)
       activerecord (>= 3.2)
     activesupport (5.1.6)
@@ -167,6 +169,8 @@ GEM
     devise-guests (0.6.1)
       devise
     diff-lcs (1.3)
+    domain_name (0.5.20180417)
+      unf (>= 0.0.5, < 1.0.0)
     dropbox_api (0.1.12)
       faraday (~> 0.9, ~> 0.8)
       oauth2 (~> 1.1)
@@ -227,6 +231,8 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday-encoding (0.0.4)
       faraday
+    faraday-honeycomb (0.3.0)
+      libhoney (>= 1.5.0)
     fcrepo_wrapper (0.9.0)
       ruby-progressbar
     ffi (1.9.25)
@@ -263,8 +269,23 @@ GEM
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
     hiredis (0.6.3)
+    honeycomb-beeline (0.5.0)
+      activerecord-honeycomb (>= 0.3.0)
+      faraday-honeycomb (>= 0.2.1)
+      libhoney (>= 1.8.1)
+      rack-honeycomb (>= 0.3.0)
+      sequel-honeycomb (>= 0.2.1)
     htmlentities (4.3.4)
+    http (3.3.0)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 2.0)
+      http_parser.rb (~> 0.6.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    http-form_data (2.1.1)
     http_logger (0.5.1)
+    http_parser.rb (0.6.0)
     httparty (0.16.3)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
@@ -421,6 +442,9 @@ GEM
       slop
     legato (0.7.0)
       multi_json
+    libhoney (1.11.0)
+      addressable (~> 2.0)
+      http (>= 2.0, < 4.0)
     link_header (0.0.8)
     linkeddata (3.0.1)
       equivalent-xml (~> 0.6)
@@ -513,6 +537,8 @@ GEM
       rails (~> 5.0)
       rdf
     rack (2.0.6)
+    rack-honeycomb (0.3.0)
+      libhoney (>= 1.5.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.1.6)
@@ -661,6 +687,8 @@ GEM
     selenium-webdriver (3.141.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2, >= 1.2.2)
+    sequel-honeycomb (0.3.3)
+      libhoney
     shex (0.5.2)
       ebnf (~> 1.1)
       json-ld (>= 2.2, < 4.0)
@@ -738,6 +766,9 @@ GEM
     uber (0.1.0)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.5)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (3.7.0)
@@ -762,6 +793,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.6)
   fcrepo_wrapper
+  honeycomb-beeline
   hyrax (= 2.4.0)
   jbuilder (~> 2.5)
   jquery-rails
